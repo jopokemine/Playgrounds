@@ -21,6 +21,31 @@ const myFunction = (arg1, ...args) => {
     console.log(arg1);
     console.log(typeof args);
 }
+// es6 async function
+async function myAsyncFunction(arg1, arg2) {
+    const awaitConst = await setTimeout(() => {
+        console.log("hello1");
+    }, 1000);
+    console.log("hello2");
+}
+// promise
+const promise = new Promise((resolve, reject) => {
+    console.log("test");
+    if (1 == 1) {
+        resolve("This will be sent to next .then() statement, in valid function");
+    } else {
+        reject("This will be sent to next .catch() statement, or next .then() statement, in invalid function");
+    }
+});
+promise.then(result => {
+    console.log("This is run if previous promise resolves");
+    return result;
+}, result => {
+    console.log("This is run if previous promise rejects");
+    return result;
+});
+// calling functions
+myFunction("arg1", 2, true);
 
 // Classes and objects
 class myClass {
@@ -33,3 +58,24 @@ class myClass {
 }
 
 const myObject = new myClass("prop1", 2);
+
+// conditionals, loops and error handling
+const aBool = true;
+if (aBool || false && true) {
+    console.log("Runs if conditional is true");
+} else if (aBool) {
+    console.log("Runs if first conditional is false, but this conditional is true");
+} else {
+    console.log("Runs if all conditionals are false");
+}
+
+const aString = "A"
+switch (aString) {
+    case 'A':
+        console.log("Run if aString == A");
+        break;
+    case 'B':
+    case 'C':
+        console.log("Run if aString == B or if aString == C");
+    default:
+}
