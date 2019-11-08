@@ -50,7 +50,7 @@ top10 albums = take 10 albums
 -- DEMO 3
 
 albumsBetweenYears :: [Album] -> Int -> Int -> String
-albumsBetweenYears [] dateMin dateMax = []
+albumsBetweenYears [] _ _ = []
 albumsBetweenYears (x:xs) dateMin dateMax
     | (x:xs) == [] = ""
     | otherwise = dateSearch x dateMin dateMax ++ albumsBetweenYears xs dateMin dateMax
@@ -63,7 +63,7 @@ dateSearch (name, artist, year, sales) dateMin dateMax
 -- DEMO 4
 
 albumsWithPrefix :: [Album] -> String -> String
-albumsWithPrefix [] prefix = ""
+albumsWithPrefix [] _ = ""
 albumsWithPrefix (x:xs) prefix
     | (x:xs) == [] = ""
     | otherwise = prefixSearch x prefix prefix ++ albumsWithPrefix xs prefix
