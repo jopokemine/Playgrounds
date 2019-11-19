@@ -59,6 +59,12 @@ class myClass {
 
 const myObject = new myClass("prop1", 2);
 
+
+////////////////////////
+// TODO: REMOVE BELOW //
+////////////////////////
+
+
 // conditionals, loops and error handling
 const aBool = true;
 if (aBool || false && true) {
