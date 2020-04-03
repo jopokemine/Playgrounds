@@ -198,4 +198,38 @@ students <- data.frame(student.names, student.marks, student.heights, student.ge
 str(students)
 students
 
-students[1]
+students[1] # Returns list of first column (student.names)
+typeof(students[1])
+students[[1]] # Returns character vector
+typeof(students[[1]])
+students[["student.names"]]
+typeof(students[["student.names"]])
+students$student.marks
+typeof(students$student.marks)
+students[1:3] # Column 1-3
+students[c("student.marks", "student.genders")]
+students
+# # Cells
+students[1,2] # [row number, column number]
+students[1:3, 1:2] # extract multiple cells
+students[c(1, 2), c(1,3)]
+students[,1] # Everything from column 1
+students[1,] # Everything from row 1
+students[c(T, F, T, F),] # Get only 1st and 3rd rows, and all columns
+students[student.genders == "Male",] # All columns where gender is Male
+students[student.marks >= 75,] # All columns where mark is above or equal to 75
+
+# Matrix - Homogeneous - 2D
+student.english.marks <- c(70L, 75L, 80L, 85L)
+student.maths.marks <- c(90L, 80L, 70L, 60L)
+student.marks <- rbind(student.english.marks, student.maths.marks) # defines row names, defaults column names
+student.marks
+student.marks <- cbind(student.english.marks, student.maths.marks) # defaults row names, defines column names
+student.marks
+rownames(student.marks) <- c("Josh", "Anna", "Leon", "Katie")
+student.marks
+str(student.marks)
+student.marks <- matrix(c(70L, 75L, 70L, 85L, 90L, 80L, 70L, 60L), ncol = 2, nrow = 4) # 2 columns, 4 rows
+student.marks
+student.marks <- matrix(c(70L, 75L, 70L, 85L, 90L, 80L, 70L, 60L), ncol = 4, nrow = 2, byrow = TRUE)
+student.marks
