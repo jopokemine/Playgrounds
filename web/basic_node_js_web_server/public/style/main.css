@@ -1,0 +1,6 @@
+button.fl, div.fl { float:left; }
+
+div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
